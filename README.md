@@ -30,7 +30,7 @@ Our EDA began with visualizing each feature's distribution, understanding geogra
   
 - AveOccup (Average Occupancy): There are districts with unusually high average occupancy, which could be outliers.
 
-<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/3_scatter%20plot%20matrices%20to%20visualize%20pairwise%20relationships%20between%20features..png" width="600" height="500"></p>
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/3_scatter%20plot%20matrices%20to%20visualize%20pairwise%20relationships%20between%20features..png" width="600" height="700"></p>
 
 
 - **Scatter Plots**: The geographical scatter plot illuminated price hotspots in coastal regions and confirmed the premium on sea-facing properties. It also revealed the clustering of high-price districts in areas with higher median incomes.
