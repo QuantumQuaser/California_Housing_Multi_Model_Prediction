@@ -12,7 +12,7 @@ The California Housing dataset encapsulates the diversity of Californian distric
 
 Our EDA began with visualizing each feature's distribution, understanding geographical influences on price, and inspecting feature interdependencies.
 
-<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Histograms.png" width="500" height="300"></p>
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Histograms.png" width="600" height="500"></p>
 
 
 - **Histograms**: We observed skewed distributions in features such as median income, suggesting a concentration of block groups with lower economic status. The average number of rooms and bedrooms per household also showed skewness, indicating variability in house sizes across districts.
