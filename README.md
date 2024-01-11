@@ -32,16 +32,31 @@ My EDA began with visualizing each feature's distribution, understanding geograp
   
 - AveOccup (Average Occupancy): There are districts with unusually high average occupancy, which could be outliers.
 
-<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/3_scatter%20plot%20matrices%20to%20visualize%20pairwise%20relationships%20between%20features..png" width="800" height="700"></p>
+# Scatterplots:
+
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/scatter%20plots.png" width="500" height="500"></p>
 
 
 - **Scatter Plots**: The geographical scatter plot illuminated price hotspots in coastal regions and confirmed the premium on sea-facing properties. It also revealed the clustering of high-price districts in areas with higher median incomes.
 
+# correlation Matrix"
   
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/correlation%20matrices.pngg" width="500" height="500"></p>
 
-- **Correlation Matrix**: Our correlation analysis highlighted strong links between house value and median income, while also revealing potential multicollinearity between the number of rooms and bedrooms, prompting us to consider feature engineering to mitigate this.
+- **Correlation Matrix**: correlation analysis highlighted strong links between house value and median income, while also revealing potential multicollinearity between the number of rooms and bedrooms, prompting us to consider feature engineering to mitigate this.
 
-  ![Correlation Matrix](<CORRELATION_MATRIX_PLACEHOLDER>)
+# Scatter Plot Matrix Analysis
+
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/3_scatter%20plot%20matrices%20to%20visualize%20pairwise%20relationships%20between%20features..png" width="800" height="700"></p>
+
+Shows relationships between all pairs of features, providing insights into potential multicollinearity and redundant features.
+
+# Box Plot Analysis
+
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/4_box%20plot%20to%20check%20outliers.png" width="500" height="600"></p>
+
+Indicates several outliers, especially in the population, which might need to be handled either by capping or by removing these outliers to prevent them from skewing the model's performance.
+  
 
 ## Feature Engineering Strategies
 
