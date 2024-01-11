@@ -41,7 +41,7 @@ My EDA began with visualizing each feature's distribution, understanding geograp
 
 # correlation Matrix"
   
-<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/correlation%20matrices.pngg" width="500" height="500"></p>
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/correlation%20matrices.png" width="500" height="500"></p>
 
 - **Correlation Matrix**: correlation analysis highlighted strong links between house value and median income, while also revealing potential multicollinearity between the number of rooms and bedrooms, prompting us to consider feature engineering to mitigate this.
 
