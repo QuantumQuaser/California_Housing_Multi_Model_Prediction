@@ -58,7 +58,7 @@ Shows relationships between all pairs of features, providing insights into poten
 Indicates several outliers, especially in the population, which might need to be handled either by capping or by removing these outliers to prevent them from skewing the model's performance.
   
 
-## Feature Engineering Strategies
+## Feature Engineering Strategies Adopted 
 
 by our EDA, we embarked on feature engineering to enhance model performance:
 
@@ -129,9 +129,7 @@ Cross-validated RMSE: 0.5264 ± 0.0172
 
   **Gradient boosting conclusion:** Gradient Boosting initially performed better than the Decision Tree but not as well as the Random Forest. This could be due to the model not being fully tuned to the dataset. The residual plot before optimization shows a slightly wider spread than Random Forest, indicating room for improvement.
 
-- **Optimized Gradient Boosting performance**: 
-
-  Optimized Gradient Boosting Performance:
+- # Optimized Gradient Boosting performance: 
   
 MSE: 0.2063
 MAE: 0.2986
@@ -144,7 +142,7 @@ After optimization, the Gradient Boosting model shows the best performance with 
 
 ## Performance Results
 
-The models' predictive prowess is encapsulated in the following table:
+The models' predictive accuracy is encapsulated in the follwing table:
 
 | Model | MSE | MAE | RMSE | CV RMSE |
 | --- | --- | --- | --- | --- |
