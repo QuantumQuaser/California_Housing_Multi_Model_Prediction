@@ -2,13 +2,11 @@
 
 ## Introduction
 
-This repository is dedicated to predicting housing prices in California using machine learning models. The project involves applying and evaluating the Decision Tree, Random Forest, and Gradient Boosting models to determine the most accurate predictor. We delve into feature relationships through exploratory data analysis, refine features with engineering strategies, optimize models, especially Gradient Boosting, and assess their performance through various metrics.
+This repository is dedicated to predicting housing prices in California using machine learning models. The project involves applying and evaluating the Decision Tree, Random Forest, and Gradient Boosting models to determine the most accurate predictor. I delve into feature relationships through exploratory data analysis, refine features with engineering strategies, optimize models, especially Gradient Boosting, and assess their performance through various metrics.
 
 ## Dataset Analysis
 
 The California Housing dataset encapsulates the diversity of Californian districts, with features like median income, housing age, average rooms per household, and geographical coordinates. Our analysis aims to untangle the complex interplay between these attributes and housing prices.
-
-### Exploratory Data Analysis (EDA)
 
 My EDA began with visualizing each feature's distribution, understanding geographical influences on price, and inspecting feature interdependencies.
 
@@ -16,8 +14,6 @@ My EDA began with visualizing each feature's distribution, understanding geograp
   
 <p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Histograms.png" width="600" height="500"></p>
 
-
- We observed skewed distributions in features such as median income, suggesting a concentration of block groups with lower economic status. The average number of rooms and bedrooms per household also showed skewness, indicating variability in house sizes across districts.
 
 - **Histograms Analysis:**
 - MedInc (Median Income): The income distribution appears to be right-skewed, suggesting that there are more neighborhoods with lower median incomes than high. Feature scaling may be necessary to normalize the distribution.
@@ -60,7 +56,7 @@ Indicates several outliers, especially in the population, which might need to be
 
 ## Feature Engineering Strategies Adopted 
 
-by our EDA, we embarked on feature engineering to enhance model performance:
+by my EDA, I embarked on feature engineering to enhance model performance:
 
 **Outlier Treatment**: Cap the features with outliers such as AveRooms, AveBedrms, and Population to reduce their effect.
 
@@ -76,10 +72,10 @@ These strategies were chosen to address specific data characteristics, aiming to
 
 ## Model Preparation and Training
 
-We prepared our data, splitting it into training and test sets, and scaled the features to provide a uniform playing field for model training.
+I prepared  data, splitting it into training and test sets, and scaled the features to provide a uniform playing field for model training.
 
 ### Decision Tree
-A straightforward model that sets the baseline for performance but may overfit our diverse dataset.
+A straightforward model that sets the baseline for performance but may overfit  diverse dataset.
 
 ### Random Forest
 An ensemble approach that builds resilience against overfitting and benefits from the collective decision-making of multiple trees.
@@ -154,11 +150,11 @@ The models' predictive accuracy is encapsulated in the follwing table:
 # Conclusion
 
 ## Best and Worst Performing Models:
-Based on the data provided, the Optimized Gradient Boosting model is the best performer. The optimization process allowed it to effectively learn the nonlinear relationships and interactions within the data without overfitting, which is evident from the tight clustering of residuals and the lowest error metrics.
+The Optimized Gradient Boosting model is the best performer. The optimization process allowed it to effectively learn the nonlinear relationships and interactions within the data without overfitting, which is evident from the tight clustering of residuals and the lowest error metrics.
 
 The Decision Tree model is the worst performer due to its high error metrics and the clear pattern in the residuals, indicating a lack of model complexity to capture the relationships in the data fully.
 
-The Random Forest model sits in between, with performance significantly better than the Decision Tree but not quite as good as the optimized Gradient Boosting. Its ability to reduce overfitting by averaging multiple trees makes it a strong model, though it may still be improved with further hyperparameter tuning.
+The Random Forest model sits in between, with performance significantly better than the Decision Tree but not quite as good as the optimized Gradient Boosting. Its ability to reduce overfitting by averaging multiple trees makes it a strong model.
 
 
 
