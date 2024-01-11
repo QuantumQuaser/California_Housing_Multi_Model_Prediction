@@ -10,9 +10,9 @@ The California Housing dataset encapsulates the diversity of Californian distric
 
 ### Exploratory Data Analysis (EDA)
 
-Our EDA began with visualizing each feature's distribution, understanding geographical influences on price, and inspecting feature interdependencies.
+My EDA began with visualizing each feature's distribution, understanding geographical influences on price, and inspecting feature interdependencies.
 
- * Histograms: *
+ ***<p style="text-align: center;">Histogram:</p>***
   
 <p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Histograms.png" width="600" height="500"></p>
 
