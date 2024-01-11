@@ -60,12 +60,16 @@ Indicates several outliers, especially in the population, which might need to be
 
 ## Feature Engineering Strategies
 
-Informed by our EDA, we embarked on feature engineering to enhance model performance:
+by our EDA, we embarked on feature engineering to enhance model performance:
 
 **Outlier Treatment**: Cap the features with outliers such as AveRooms, AveBedrms, and Population to reduce their effect.
+
 **Feature Scaling**: Since the scales of the features vary widely, apply Min-Max Scaling or Standardization to ensure that all features contribute equally to the distance computations in the models.
+
 **Feature Transformation**: Apply transformations such as logarithmic or square root to highly skewed features to normalize their distributions.
+
 **Location Features**: Create new features that capture the proximity to specific landmarks or city centers.
+
 **Interaction Terms**: Given the correlation between features, create interaction terms that might help in capturing the combined effect on the housing prices (e.g., income to average occupancy ratio).
 
 These strategies were chosen to address specific data characteristics, aiming to distill clearer signals for our predictive models.
