@@ -62,9 +62,11 @@ Indicates several outliers, especially in the population, which might need to be
 
 Informed by our EDA, we embarked on feature engineering to enhance model performance:
 
-1. **Normalization**: Skewed features were normalized to curtail the influence of extreme values.
-2. **Outlier Handling**: We capped outliers to temper their impact, ensuring our models remained focused on prevalent trends.
-3. **Feature Creation**: New features, such as rooms per occupant and bedrooms per room, were derived to capture underlying patterns that raw features might obscure.
+**Outlier Treatment**: Cap the features with outliers such as AveRooms, AveBedrms, and Population to reduce their effect.
+**Feature Scaling**: Since the scales of the features vary widely, apply Min-Max Scaling or Standardization to ensure that all features contribute equally to the distance computations in the models.
+**Feature Transformation**: Apply transformations such as logarithmic or square root to highly skewed features to normalize their distributions.
+**Location Features**: Create new features that capture the proximity to specific landmarks or city centers.
+**Interaction Terms**: Given the correlation between features, create interaction terms that might help in capturing the combined effect on the housing prices (e.g., income to average occupancy ratio).
 
 These strategies were chosen to address specific data characteristics, aiming to distill clearer signals for our predictive models.
 
@@ -85,25 +87,56 @@ An advanced ensemble method that showed promise but was initially hampered by su
 
 Through RandomizedSearchCV, we tuned Gradient Boosting's hyperparameters, such as the number of trees (n_estimators), learning rate, and tree depth, to balance learning granularity with generalization. This meticulous tuning significantly honed the model's accuracy.
 
-## Residual Analysis
+## Performance and Residual Analysis
 
 The residual plots provide a window into each model's prediction errors:
 
-- **Decision Tree Residuals**: Showed a scattered spread indicating variance in prediction errors, reflecting overfitting tendencies.
+# Decision Tree Performance:
 
-  ![Residual Plot for Decision Tree](<RESIDUAL_PLOT_DT_PLACEHOLDER>)
+MSE: 0.5214
+MAE: 0.4600
+RMSE: 0.7221
+Cross-validated RMSE: 0.7223 ± 0.0190
 
-- **Random Forest Residuals**: Demonstrated a tighter cluster around the center, suggesting better performance but with room for improvement.
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Residual%20Plot%20for%20decision%20tree.png" width="500" height="600"></p>
 
-  ![Residual Plot for Random Forest](<RESIDUAL_PLOT_RF_PLACEHOLDER>)
+- **Decision Tree conclusion **: The Decision Tree shows the highest errors among the models. Decision Trees are prone to overfitting, which is likely the cause of the higher error rates. The residual plot for the Decision Tree exhibits a relatively wider spread of residuals, indicating more significant prediction errors, and there's a noticeable trend in the residuals as the observed values increase, suggesting the model isn't capturing all the underlying patterns.
 
-- **Gradient Boosting Residuals (Before Optimization)**: While decent, there was noticeable spread indicating potential for optimization.
+  # Random Forest Performance:
 
-  ![Residual Plot for Gradient Boosting](<RESIDUAL_PLOT_GB_PLACEHOLDER>)
+ MSE: 0.2537
+MAE: 0.3274
+RMSE: 0.5037
+Cross-validated RMSE: 0.5081 ± 0.0164
 
-- **Optimized Gradient Boosting Residuals**: Post-tuning, the residuals clustered tightly around zero, illustrating a marked leap in predictive accuracy.
+  <p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Residual%20Plot%20for%20Random%20Forest.png" width="500" height="600"></p>
+  
+- **Random Forest conclusion**: Random Forest has much lower error rates across all metrics compared to the Decision Tree, which is expected given that Random Forest is an ensemble model that mitigates overfitting by averaging multiple decision trees. The residual plot for the Random Forest shows a tighter cluster of residuals around zero, indicating better performance, although there are still some outliers, particularly for higher-valued homes.
 
-  ![Residual Plot for Optimized Gradient Boosting](<RESIDUAL_PLOT_OGB_PLACEHOLDER>)
+  
+- # Gradient Boosting Performance (Before Optimization)**: While decent, there was noticeable spread indicating potential for optimization.
+
+- MSE: 0.2868
+MAE: 0.3662
+RMSE: 0.5355
+Cross-validated RMSE: 0.5264 ± 0.0172
+
+  <p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Residual%20plot%20for%20gradient%20boosting.png" width="500" height="600"></p>
+
+  **Gradient boosting conclusion:** Gradient Boosting initially performed better than the Decision Tree but not as well as the Random Forest. This could be due to the model not being fully tuned to the dataset. The residual plot before optimization shows a slightly wider spread than Random Forest, indicating room for improvement.
+
+- **Optimized Gradient Boosting performance**: 
+
+  Optimized Gradient Boosting Performance:
+  
+MSE: 0.2063
+MAE: 0.2986
+RMSE: 0.4543
+Cross-validated RMSE: 0.4609 ± 0.0148
+
+<p align="center"><img src="https://github.com/QuantumQuaser/California_Housing_Multi_Model_Prediction/blob/main/Visuals/Residual%20plot%20for%20optimized%20gradient%20boosting.png" width="500" height="600"></p>
+
+After optimization, the Gradient Boosting model shows the best performance with the lowest error rates across all metrics. The optimization of hyperparameters has clearly paid off, as evidenced by the reduced errors. The residual plot for the optimized Gradient Boosting model has the residuals more tightly clustered around zero and fewer extreme values than before optimization, indicating that the model's predictions are more accurate and consistent.
 
 ## Performance Results
 
@@ -116,9 +149,14 @@ The models' predictive prowess is encapsulated in the following table:
 | Gradient Boosting (Before Opt.) | `0.2868` | `0.3662` | `0.5355` | `0.5264` |
 | Gradient Boosting (Optimized) | `0.2063` | `0.2986` | `0.4543` | `0.4609` |
 
-## Conclusion
+# Conclusion
 
-The journey from raw data to refined predictions has been illuminating. The optimized Gradient Boosting model, with its superior error metrics, stood out as the clear winner. It exemplified how targeted optimization can unleash a model's true potential. The Decision Tree, while insightful, was outshone due to its simplicity. The Random Forest struck a middle ground, robust yet outperformed by its Gradient Boosting counterpart.
+## Best and Worst Performing Models:
+Based on the data provided, the Optimized Gradient Boosting model is the best performer. The optimization process allowed it to effectively learn the nonlinear relationships and interactions within the data without overfitting, which is evident from the tight clustering of residuals and the lowest error metrics.
+
+The Decision Tree model is the worst performer due to its high error metrics and the clear pattern in the residuals, indicating a lack of model complexity to capture the relationships in the data fully.
+
+The Random Forest model sits in between, with performance significantly better than the Decision Tree but not quite as good as the optimized Gradient Boosting. Its ability to reduce overfitting by averaging multiple trees makes it a strong model, though it may still be improved with further hyperparameter tuning.
 
 
 
