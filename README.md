@@ -17,6 +17,19 @@ Our EDA began with visualizing each feature's distribution, understanding geogra
 
 - **Histograms**: We observed skewed distributions in features such as median income, suggesting a concentration of block groups with lower economic status. The average number of rooms and bedrooms per household also showed skewness, indicating variability in house sizes across districts.
 
+- **Histograms Analysis:**
+- MedInc (Median Income): The income distribution appears to be right-skewed, suggesting that there are more neighborhoods with lower median incomes than high. Feature scaling may be necessary to normalize the distribution.
+
+- HouseAge: Many houses are quite old, with a significant number around the 50-year mark. This feature may be important as older houses could affect the housing prices.
+  
+- AveRooms (Average Rooms): This is also right-skewed, with outliers present indicating some districts have a high number of rooms.
+  
+- AveBedrms (Average Bedrooms): Similar to AveRooms, this is also right-skewed with some extreme values.
+  
+- Population: Highly right-skewed, indicating that most districts have a low population, but a few have very high populations.
+  
+- AveOccup (Average Occupancy): There are districts with unusually high average occupancy, which could be outliers.
+
 
 - **Scatter Plots**: The geographical scatter plot illuminated price hotspots in coastal regions and confirmed the premium on sea-facing properties. It also revealed the clustering of high-price districts in areas with higher median incomes.
 
